@@ -43,36 +43,36 @@ class _RegisterPageState extends State<RegisterPage> {
             margin: EdgeInsets.only(top: v16 * 1.5, left: v16, right: v16),
             child: CupertinoTextField(
               padding: EdgeInsets.symmetric(vertical: v16, horizontal: v16),
-              style: TextStyle(color: Color(0xffA6A0BB)),
+              style: TextStyle(color: APP_ACCENT),
               placeholder: "Full name",
               decoration: BoxDecoration(
                   color: Color(0xff131118),
                   borderRadius: BorderRadius.circular(8)),
-              placeholderStyle: TextStyle(color: Color(0xffA6A0BB)),
+              placeholderStyle: TextStyle(color: APP_ACCENT),
             ),
           ),
           Container(
             margin: EdgeInsets.only(top: v16 * 1.5, left: v16, right: v16),
             child: CupertinoTextField(
               padding: EdgeInsets.symmetric(vertical: v16, horizontal: v16),
-              style: TextStyle(color: Color(0xffA6A0BB)),
+              style: TextStyle(color: APP_ACCENT),
               placeholder: "Middle name",
               decoration: BoxDecoration(
                   color: Color(0xff131118),
                   borderRadius: BorderRadius.circular(8)),
-              placeholderStyle: TextStyle(color: Color(0xffA6A0BB)),
+              placeholderStyle: TextStyle(color: APP_ACCENT),
             ),
           ),
           Container(
             margin: EdgeInsets.only(top: v16 * 1.5, left: v16, right: v16),
             child: CupertinoTextField(
               padding: EdgeInsets.symmetric(vertical: v16, horizontal: v16),
-              style: TextStyle(color: Color(0xffA6A0BB)),
+              style: TextStyle(color: APP_ACCENT),
               placeholder: "Last Name",
               decoration: BoxDecoration(
                   color: Color(0xff131118),
                   borderRadius: BorderRadius.circular(8)),
-              placeholderStyle: TextStyle(color: Color(0xffA6A0BB)),
+              placeholderStyle: TextStyle(color: APP_ACCENT),
             ),
           ),
         ],

@@ -1,8 +1,9 @@
-import 'package:bigwallet/views/intro.dart';
+import 'package:bigwallet/views/colors.dart';
+import 'package:bigwallet/views/auth/intro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'views/login.dart';
+import 'views/auth/login.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoApp(
       title: 'BigWallet',
-      home: LoginPage(),
+      theme: CupertinoThemeData(scaffoldBackgroundColor: REAL_BLACK),
+      home: IntroPage(),
     );
   }
 }

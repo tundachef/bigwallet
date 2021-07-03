@@ -1,4 +1,7 @@
+import 'package:bigwallet/views/auth/login.dart';
+import 'package:bigwallet/views/auth/register.dart';
 import 'package:bigwallet/views/colors.dart';
+import 'package:bigwallet/views/widgets/buttons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -41,37 +44,18 @@ class _IntroPageState extends State<IntroPage> {
                         foreground: Paint()..shader = APP_PRIMARY),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(
-                      top: v16 * 1.5, left: v16 * 2, right: v16 * 2),
-                  padding:
-                      EdgeInsets.symmetric(vertical: v16, horizontal: v16 * 2),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(v16 * 2),
-                    color: Color(0xff1C1924),
-                  ),
-                  child: Center(
-                      child: Text(
-                    "Already a member?",
-                    style: normalTextStyle.copyWith(
-                        foreground: Paint()..shader = APP_PRIMARY),
-                  )),
-                ),
-                Container(
-                  margin: EdgeInsets.only(
-                      top: v16 * 1.5, left: v16 * 2, right: v16 * 2),
-                  padding:
-                      EdgeInsets.symmetric(vertical: v16, horizontal: v16 * 2),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(v16 * 2),
-                    gradient: APP_PRIMARY_GRADIENT,
-                  ),
-                  child: Center(
-                      child: Text(
-                    "Create a new Wallet",
-                    style: normalTextStyle.copyWith(color: REAL_WHITE),
-                  )),
-                ),
+                AccentButton(context,
+                    v16: v16,
+                    text: "Already a member?",
+                    onTap: () => Navigator.push(context,
+                        CupertinoPageRoute(builder: (context) => LoginPage()))),
+                PrimaryButton(context,
+                    v16: v16,
+                    onTap: () => Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                            builder: (context) => RegisterPage())),
+                    text: "Create a new Wallet"),
               ],
             ),
           ),

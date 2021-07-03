@@ -110,6 +110,7 @@ const testImage3 =
 const testImage4 =
     "https://images.pexels.com/photos/1042143/pexels-photo-1042143.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
 
+// APP_SPECIFIC
 Shader APP_PRIMARY = LinearGradient(
   colors: <Color>[Color(0xffCC2B5E), Color(0xff753A88)],
 ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
