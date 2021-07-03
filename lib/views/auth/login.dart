@@ -1,8 +1,11 @@
+import 'package:bigwallet/views/widgets/buttons.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 // import 'package:flutter/material.dart';
 
 import '../colors.dart';
+import '../colors.dart';
+import '../index.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key key}) : super(key: key);
@@ -59,8 +62,8 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 Container(
-                  margin:
-                      EdgeInsets.only(top: v16 * 1.5, left: v16, right: v16),
+                  margin: EdgeInsets.only(
+                      top: v16 * 1.5, left: v16, right: v16, bottom: v16 / 2),
                   child: CupertinoTextField(
                     suffixMode: OverlayVisibilityMode.always,
                     obscureText: _obscure,
@@ -75,8 +78,10 @@ class _LoginPageState extends State<LoginPage> {
                       child: Container(
                         padding: EdgeInsets.only(right: 8),
                         child: _obscure
-                            ? Icon(EvaIcons.eye, size: 28, color: APP_ACCENT)
-                            : Icon(EvaIcons.eye, size: 28, color: APP_ACCENT),
+                            ? Icon(EvaIcons.eyeOutline,
+                                size: 28, color: APP_ACCENT)
+                            : Icon(EvaIcons.eyeOffOutline,
+                                size: 28, color: APP_ACCENT),
                       ),
                     ),
                     style: TextStyle(color: APP_ACCENT),
@@ -87,36 +92,27 @@ class _LoginPageState extends State<LoginPage> {
                     placeholderStyle: TextStyle(color: APP_ACCENT),
                   ),
                 ),
-                Container(
-                  margin:
-                      EdgeInsets.only(top: v16, left: v16 * 2, right: v16 * 2),
-                  padding:
-                      EdgeInsets.symmetric(vertical: v16, horizontal: v16 * 2),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(v16 * 2),
-                    color: Color(0xff1C1924),
-                  ),
-                  child: Center(
-                      child: Text(
-                    "Already a member?",
-                    style: normalTextStyle.copyWith(
-                        foreground: Paint()..shader = APP_PRIMARY),
-                  )),
-                ),
-                Container(
-                  margin: EdgeInsets.only(
-                      top: v16 * 1.5, left: v16 * 2, right: v16 * 2),
-                  padding:
-                      EdgeInsets.symmetric(vertical: v16, horizontal: v16 * 2),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(v16 * 2),
-                    gradient: APP_PRIMARY_GRADIENT,
-                  ),
-                  child: Center(
-                      child: Text(
-                    "Create a new Wallet",
-                    style: normalTextStyle.copyWith(color: REAL_WHITE),
-                  )),
+                PrimaryButton(context,
+                    v16: v16,
+                    onTap: () => Navigator.push(context,
+                        CupertinoPageRoute(builder: (context) => Index())),
+                    text: "Continue"),
+                AccentButton(context,
+                    v16: v16,
+                    text: "Continue via LinkedIn",
+                    onTap: null,
+                    hasIcon: true,
+                    icon: Image.asset('assets/images/linkedin.png')),
+                ShaderMask(
+                  shaderCallback: (bounds) => APP_PRIMARY,
+                  child: Container(
+                      margin: EdgeInsets.only(top: v16),
+                      child: Text("Forgot Password?",
+                          style: TextStyle(
+                            foreground: Paint()..shader = APP_PRIMARY,
+                            decoration: TextDecoration.underline,
+                            // decorationColor:
+                          ))),
                 ),
               ],
             ),
