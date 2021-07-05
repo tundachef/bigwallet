@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'views/auth/login.dart';
+import 'views/index.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,10 +14,25 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
+    return MaterialApp(
       title: 'BigWallet',
-      theme: CupertinoThemeData(scaffoldBackgroundColor: REAL_BLACK),
-      home: IntroPage(),
+      builder: (context, child) {
+        return ScrollConfiguration(
+          behavior: MyBehavior(),
+          child: child,
+        );
+      },
+      theme: ThemeData(scaffoldBackgroundColor: REAL_BLACK),
+      home: Index(),
     );
+  }
+}
+
+// VIP CLASS DON'T TAMPER!!!!!
+class MyBehavior extends ScrollBehavior {
+  @override
+  Widget buildViewportChrome(
+      BuildContext context, Widget child, AxisDirection axisDirection) {
+    return child;
   }
 }

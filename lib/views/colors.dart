@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // const APP_PRIMARY = Color(0xff064264);
 const APP_ACCENT = Color(0xffA6A0BB);
+const APP_TEXTFIELD = Color(0xff131118);
 const REAL_WHITE = Color(0xffffffff);
 const REAL_BLACK = Color(0xff000000);
 const Color SCAFFOLD_BG = Color(0xfff9f9f9);

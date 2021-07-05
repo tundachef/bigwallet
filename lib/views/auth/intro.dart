@@ -18,52 +18,54 @@ class _IntroPageState extends State<IntroPage> {
     double width = MediaQuery.of(context).size.width;
     double v16 = width / 20;
     double height = MediaQuery.of(context).size.height;
-    return CupertinoPageScaffold(
-        // navigationBar: ,
-        resizeToAvoidBottomInset: false,
-        child: Container(
-          width: width,
-          height: height,
-          child: Stack(
-            children: <Widget>[
-              Positioned.fill(
-                  child: Image.asset(
-                'assets/images/bg01.png',
-                fit: BoxFit.fill,
-              )),
-              Positioned.fill(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      child: Text(
-                        'Welcome to \n BigWallet',
-                        style: new TextStyle(
-                            fontSize: 42,
-                            fontWeight: FontWeight.bold,
-                            foreground: Paint()..shader = APP_PRIMARY),
+    return Scaffold(
+      body: CupertinoPageScaffold(
+          // navigationBar: ,
+          resizeToAvoidBottomInset: false,
+          child: Container(
+            width: width,
+            height: height,
+            child: Stack(
+              children: <Widget>[
+                Positioned.fill(
+                    child: Image.asset(
+                  'assets/images/bg01.png',
+                  fit: BoxFit.fill,
+                )),
+                Positioned.fill(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        child: Text(
+                          'Welcome to \n BigWallet',
+                          style: new TextStyle(
+                              fontSize: 42,
+                              fontWeight: FontWeight.bold,
+                              foreground: Paint()..shader = APP_PRIMARY),
+                        ),
                       ),
-                    ),
-                    AccentButton(context,
-                        v16: v16,
-                        text: "Already a member?",
-                        onTap: () => Navigator.push(
-                            context,
-                            CupertinoPageRoute(
-                                builder: (context) => LoginPage()))),
-                    PrimaryButton(context,
-                        v16: v16,
-                        onTap: () => Navigator.push(
-                            context,
-                            CupertinoPageRoute(
-                                builder: (context) => RegisterPage())),
-                        text: "Create a new Wallet"),
-                  ],
+                      AccentButton(context,
+                          v16: v16,
+                          text: "Already a member?",
+                          onTap: () => Navigator.push(
+                              context,
+                              CupertinoPageRoute(
+                                  builder: (context) => LoginPage()))),
+                      PrimaryButton(context,
+                          v16: v16,
+                          onTap: () => Navigator.push(
+                              context,
+                              CupertinoPageRoute(
+                                  builder: (context) => RegisterPage())),
+                          text: "Create a new Wallet"),
+                    ],
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ));
+              ],
+            ),
+          )),
+    );
   }
 }
